@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "baikal";
+    src: url(../fonts/Baikal-Medium.otf);
+  }
+
+  html {
+    /* scroll-behavior: smooth; */
+    animation: fadeIn 1.5s;
+    transition: 0.4s;
+    background-color: white;
+  }
+
+  h1{
+    font-size: 1.5em;
+    font-family: baikal;
+  }
+
+.tab{
+  display: inline-block;
+  margin-left: 1.5em;
+}
+
+  h2{
+    font-size: 1em;
+    font-family: baikal;
+  }
+
+  h3{
+    font-size: 2.5em;
+    font-family: baikal;
+    text-indent: -4em;
+    margin-left: 4em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+
+  li {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    gap: .4rem;
+  }
+
+
+@media (max-width: 900px) {
+
+
+  h1{
+    font-size: 1em;
+    font-family: baikal;
+  }
+
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
