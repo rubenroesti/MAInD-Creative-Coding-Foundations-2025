@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "baikal";
+    src: url(/fonts/Baikal-Medium.otf);
+  }
+
+  html {
+    /* scroll-behavior: smooth; */
+    animation: fadeIn 1.5s;
+    transition: 0.4s;
+    background-color: white;
+  }
+
+  h1{
+    font-size: 1.5em;
+    font-family: baikal;
+  }
+
+  h2{
+    font-size: 1em;
+    font-family: baikal;
+  }
+
+  h3{
+    font-size: 2.5em;
+    font-family: baikal;
+  }
+
+  h4{
+    font-size: .5em;
+    font-family: baikal;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+
+  li {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    gap: .4rem;
+  }
+
+/* classi generali */
+
+
+
+/* classi header */
+
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.header-intro {
+  height: 25vh;
+  width: 75vw;
+  background-color: blue;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.header-nav {
+  height: 25vh;
+  width: 25vw;
+  background-color: blue;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+/* classi main */
+
+main {
+  height: 85vh;
+  transition: all 0.35s ease;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+main.pinboard-view {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+main.pinboard-view .pin-container {
+  flex: 0 0 25vw;
+  height: 50%;
+  box-sizing: border-box;
+}
+
+/* list layout */
+main.list-view {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  scroll-snap-type: start;
+  align-items: stretch; 
+}
+
+main.list-view .pin-container {
+  flex: 0 0 50%;       
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.pin-container {
+  scroll-snap-align: start;
+  background-color: rgb(156, 156, 156);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.35s ease;
+}
+
+.pin-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+  display: block; 
+}
+
+/* classi footer */
+
+footer {
+  height: 5vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+
+@media (max-width: 900px) {
+
+
+  h1{
+    font-size: 1em;
+    font-family: baikal;
+  }
+
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
