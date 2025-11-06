@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "baikal";
+    src: url(/fonts/Baikal-Medium.otf);
+  }
+
+  html, body {
+    /* scroll-behavior: smooth; */
+    animation: fadeIn 1.5s;
+    transition: 0.4s;
+    background-color: white;
+    height: 100%;
+  }
+
+  h1{
+    font-size: 1.5em;
+    font-family: baikal;
+  }
+
+  h2{
+    font-size: 1em;
+    font-family: baikal;
+  }
+
+  h3{
+    font-size: 0.7em;
+    font-family: baikal;
+  }
+
+  h4{
+    font-size: .5em;
+    font-family: baikal;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+
+  li {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    gap: .4rem;
+  }
+
+/* classi generali */
+
+hr {
+  border: 0.5px solid black;
+}
+
+.btn-pinboard {
+  width: 100%;
+  background-color: rgb(229, 158, 158);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "baikal";
+  font-size: .7em;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.btn-list {
+  width: 100%;
+  background-color: rgb(229, 158, 158);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "baikal";
+  font-size: .7em;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.btn-add {
+  height: 25%;
+  background-color: white;
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "baikal";
+  font-size: .7em;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+/* classi header */
+
+#introduction {
+  color: grey;
+}
+
+#instructions {
+  color: black;
+}
+
+header {
+  width: 100%;
+  height: 25%;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+header a {
+  color: red;
+}
+
+header a:visited {
+  color: grey;
+}
+
+header a:hover {
+  font-style: italic;
+}
+
+.header-intro {
+  height: 25vh;
+  width: 75vw;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.header-nav {
+  height: 25vh;
+  width: 25vw;
+  /* background-color: blue; */
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+
+/* classi main */
+
+main {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  box-sizing: border-box;
+  height: 75%;
+  transition: all 0.35s ease;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+main.pinboard-view {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+/* classi pin container */
+
+.pin-container {
+  height: 50%;
+  scroll-snap-align: start;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.35s ease;
+}
+.pin-container:hover {
+  color: rgb(163, 163, 163);
+  font-style: italic;
+}
+
+.pin-container.divider:hover {
+  cursor: pointer;
+  color: red;
+  transition: color 0.3s ease;
+}
+
+/* classi per la vista pinboard */
+
+main.pinboard-view .pin-container {
+  flex: 0 0 50vw;
+  height: 50%;
+  box-sizing: border-box;
+  /* background-color: blue; */
+}
+
+.sct-left {
+  /* background-color: blueviolet; */
+  height: 100%;
+  width: 50%;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+} 
+
+.sct-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+
+}
+
+.song-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* classi per la view lista - sctRight e sctLeft */
+
+main.list-view {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  scroll-snap-type: start;
+  align-items: stretch; 
+}
+
+main.list-view .pin-container {
+  width: 100vw;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.list-view-section-left {
+  width: 100%;
+  height: 90%;
+  /* background-color: red; */
+  overflow-y: scroll;
+}
+
+.list-view-section-right {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* classi footer */
+
+footer {
+  height: 5vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+
+@media (max-width: 900px) {
+
+
+  h1{
+    font-size: 1em;
+    font-family: baikal;
+  }
+
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
