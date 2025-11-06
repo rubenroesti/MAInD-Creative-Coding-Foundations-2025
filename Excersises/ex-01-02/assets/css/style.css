@@ -1,12 +1,24 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: "baikal";
-    src: url(/fonts/Baikal-Medium.otf);
-  }
+  font-family: "baikal";
+  src: url("/fonts/Baikal-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
   html, body {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
+    font-family: "baikal";
     animation: fadeIn 1.5s;
     transition: 0.4s;
     background-color: white;
@@ -14,104 +26,66 @@
   }
 
   h1{
+    display: none;    
     font-size: 1.5em;
-    font-family: baikal;
   }
 
   h2{
+    text-align: center;
     font-size: 1em;
-    font-family: baikal;
   }
 
   h3{
+    text-align: center;
     font-size: 0.7em;
-    font-family: baikal;
   }
 
-  h4{
-    font-size: .5em;
-    font-family: baikal;
-  }
+/* classi bottoni */
 
-  ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: max-content auto;
-  }
-
-  li {
-    display: grid;
-    grid-column: span 2;
-    grid-template-columns: subgrid;
-    gap: .4rem;
-  }
-
-/* classi generali */
-
-hr {
-  border: 0.5px solid black;
-}
-
-.btn-pinboard {
+.btn-pinboard, .btn-list, .btn-add {
   width: 100%;
-  background-color: rgb(229, 158, 158);
-  border-radius: 8px;
+  height: 20%;
+  background-color: black;
+  border-radius: 50px;
   border-width: 0;
-  color: #333333;
+  color: white;
   cursor: pointer;
-  display: inline-block;
   font-family: "baikal";
   font-size: .7em;
-  margin: 0;
+  margin-top: .5em;
   padding: 10px 12px;
   text-align: center;
 }
 
-.btn-list {
+.btn-pinboard:hover,
+.btn-list:hover,
+.btn-add:hover {
+  font-style: italic;
+}
+
+input {
   width: 100%;
-  background-color: rgb(229, 158, 158);
-  border-radius: 8px;
+  height: 20%;
+  background-color: black;
+  border-radius: 50px;
   border-width: 0;
-  color: #333333;
+  color: white;
   cursor: pointer;
-  display: inline-block;
-  font-family: "baikal";
   font-size: .7em;
-  margin: 0;
-  padding: 10px 12px;
+  font-family: "baikal";
+  margin-top: .5em;
   text-align: center;
 }
 
-.btn-add {
-  height: 25%;
-  background-color: white;
-  border-radius: 8px;
-  border-width: 0;
-  color: #333333;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "baikal";
-  font-size: .7em;
-  margin: 0;
-  padding: 10px 12px;
-  text-align: center;
+input:hover {
+  cursor: text;
 }
 
-/* classi header */
-
-#introduction {
-  color: grey;
-}
-
-#instructions {
-  color: black;
-}
+/* header styles */
 
 header {
   width: 100%;
   height: 25%;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -122,39 +96,42 @@ header a {
 }
 
 header a:visited {
-  color: grey;
+  color: red;
 }
 
 header a:hover {
   font-style: italic;
 }
 
-.header-intro {
-  height: 25vh;
+.p-intro {
+  color: grey;
+  height: auto;
   width: 75vw;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
 }
+
+.p-intro-instructions {
+  color: black;
+  height: auto;
+  width: 75vw;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;}
 
 .header-nav {
   height: 25vh;
   width: 25vw;
-  /* background-color: blue; */
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 
 
-/* classi main */
+/* main styles */
 
 main {
   display: flex;
   flex-direction: row;
   overflow: hidden;
   transition: all 0.35s ease;
-  box-sizing: border-box;
   height: 75%;
-  transition: all 0.35s ease;
-  box-sizing: border-box;
   scroll-snap-type: y mandatory;
 }
 
@@ -165,20 +142,23 @@ main.pinboard-view {
 }
 
 
-/* classi pin container */
+/* pin container styles */
 
 .pin-container {
+  background-color: black;
+  border-radius: 80px;
   height: 50%;
   scroll-snap-align: start;
-  color: black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.35s ease;
 }
+
 .pin-container:hover {
-  color: rgb(163, 163, 163);
   font-style: italic;
+
 }
 
 .pin-container.divider:hover {
@@ -187,17 +167,14 @@ main.pinboard-view {
   transition: color 0.3s ease;
 }
 
-/* classi per la vista pinboard */
+/* pinboard styles */
 
 main.pinboard-view .pin-container {
   flex: 0 0 50vw;
   height: 50%;
-  box-sizing: border-box;
-  /* background-color: blue; */
 }
 
 .sct-left {
-  /* background-color: blueviolet; */
   height: 100%;
   width: 50%;
   scroll-snap-type: y mandatory;
@@ -205,12 +182,14 @@ main.pinboard-view .pin-container {
 } 
 
 .sct-right {
+  background-color: red;
+  border-radius: 50px;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 100%;
-
 }
 
 .song-info {
@@ -223,7 +202,7 @@ main.pinboard-view .pin-container {
 
 
 
-/* classi per la view lista - sctRight e sctLeft */
+/* list view styles + sctRight e sctLeft */
 
 main.list-view {
   height: 75%;
@@ -236,15 +215,15 @@ main.list-view {
 }
 
 main.list-view .pin-container {
+  background-color: white;
+  color: black;
   width: 100vw;
   height: auto;
-  box-sizing: border-box;
 }
 
 .list-view-section-left {
   width: 100%;
   height: 90%;
-  /* background-color: red; */
   overflow-y: scroll;
 }
 
@@ -257,27 +236,130 @@ main.list-view .pin-container {
 }
 
 
-/* classi footer */
+ /* responsive */
 
-footer {
-  height: 5vh;
-  background-color: black;
-  color: white;
-  text-align: center;
+ /* ipad */
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    height: 25vh;
+  }
+
+  .header-intro {
+    width: 100%;
+    height: 50%;
+    padding: 0.5rem;
+  }
+
+  .header-nav {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .p-intro,
+  .p-intro-instructions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .header-nav input,
+  .header-nav .btn-add,
+  .header-nav .btn-pinboard,
+  .header-nav .btn-list {
+    padding: 0;
+    flex: 1 1 48%;
+    max-width: 320px;
+    margin: 0.2rem;
+  }
 }
 
 
-@media (max-width: 900px) {
 
+
+ /* phone */
+@media (max-width: 600px) {
 
   h1{
-    font-size: 1em;
-    font-family: baikal;
+    font-size: 1.3em;
   }
+
+  h2{
+    font-size: 0.7em;
+  }
+
+  h3{
+    font-size: 0.5em;
+  }
+
+  header {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+  }
+
+  .p-intro,
+  .p-intro-instructions,
+  .header-nav,
+  .header-intro {
+    font-size: 0.9em;
+    width: 100%;
+  }
+
+  .pin-container {
+  border-radius: 40px;
+}
+
+.sct-right {
+  border-radius: 30px;
 
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  main {
+    height: 50vh;
   }
+
+  main.list-view,
+  main.pinboard-view {
+    height: 50vh;
+  }
+
+  .header-intro {
+    overflow: auto;
+    width: 100%;
+    height: 50%;
+    padding: 0.5rem;
+  }
+
+  .header-nav {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 0.5rem;
+  }
+
+  .header-nav input,
+  .header-nav .btn-add,
+  .header-nav .btn-pinboard,
+  .header-nav .btn-list {
+    border-radius: 20px;
+    width: 100%;
+    font-size: 0.7em;
+  }
+}
+
+/* i could do more breakpoints for different devices but would require maybe actual testing */

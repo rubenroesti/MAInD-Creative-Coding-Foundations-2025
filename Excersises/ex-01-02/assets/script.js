@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== SELECTORS =====
+
   const main = document.querySelector("main");
   const sctLeft = document.querySelector(".sct-left");
   const sctRight = document.querySelector(".sct-right");
@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const songYear = document.getElementById("song-year");
   const songNotes = document.getElementById("song-notes");
 
-  // ===== INITIAL VIEW =====
+  // default
   main.classList.add("pinboard-view");
 
-  // ===== VIEW TOGGLE =====
+  // switching between list and pinboard
   pinboardBtn.addEventListener("click", () => {
     main.classList.remove("list-view");
     main.classList.add("pinboard-view");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     main.style.flexDirection = "column";
   });
 
-  // ===== SONG INFO ON HOVER =====
+  // hovering for song info
   function attachHoverEvents() {
     const pinContainers = document.querySelectorAll(".pin-container:not(.divider)");
     pinContainers.forEach(container => {
@@ -59,14 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== DIVIDER HOVER + REMOVE BEHAVIOR =====
+  // add divider and remove
   function attachDividerEvents() {
     const dividers = document.querySelectorAll(".pin-container.divider");
     dividers.forEach(div => {
       const h2 = div.querySelector("h2");
       const originalText = h2.textContent;
 
-      // Change text on hover
       div.addEventListener("mouseenter", () => {
         h2.textContent = "Remove";
       });
@@ -75,14 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
         h2.textContent = originalText;
       });
 
-      // Remove on click
       div.addEventListener("click", () => {
         div.remove();
       });
     });
   }
 
-  // ===== ADD NEW DIVIDER =====
   addDividerBtn.addEventListener("click", () => {
     const text = dividerInput.value.trim();
     if (!text) {
@@ -98,13 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
     newDiv.appendChild(heading);
     sctLeft.appendChild(newDiv);
 
-    // Attach new behaviors
     attachDividerEvents();
 
     dividerInput.value = "";
   });
 
-  // ===== INITIAL SETUP =====
   attachHoverEvents();
   attachDividerEvents();
 });
