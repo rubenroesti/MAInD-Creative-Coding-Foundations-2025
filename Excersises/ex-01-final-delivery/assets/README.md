@@ -25,6 +25,7 @@ I chose this because I find the song to be an icon of rock/folk music, as well a
 - Add more interaction, also depth of information, maybe on click you can see the album cover for example...
 - Complete the list by adding as many covers as one can find
 - Make the scrolling on the left section a lot more obvious, it's not easy to tell it has to be scroller now
+- Change the font for a WOFF font
 
 ## Functions:
 
