@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1080 1080">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #ff7bac;
+      }
+
+      .st1 {
+        fill: #a67c52;
+      }
+    </style>
+  </defs>
+  <ellipse class="st1" cx="540" cy="525.12" rx="308.72" ry="183.75" transform="translate(-109.78 906.08) rotate(-74.58)"/>
+  <ellipse class="st0" cx="326.29" cy="735.43" rx="208.98" ry="52.45" transform="translate(-424.46 446.13) rotate(-45)"/>
+  <ellipse class="st0" cx="753.71" cy="735.43" rx="52.45" ry="208.98" transform="translate(-299.27 748.35) rotate(-45)"/>
+  <ellipse class="st0" cx="326.29" cy="331.21" rx="52.45" ry="208.98" transform="translate(-138.63 327.74) rotate(-45)"/>
+  <ellipse class="st0" cx="753.71" cy="331.21" rx="208.98" ry="52.45" transform="translate(-13.45 629.96) rotate(-45)"/>
+  <ellipse class="st0" cx="245.98" cy="525.12" rx="208.98" ry="52.45"/>
+  <ellipse class="st0" cx="548.2" cy="827.34" rx="52.45" ry="208.98"/>
+  <ellipse class="st0" cx="531.8" cy="239.3" rx="52.45" ry="208.98"/>
+  <ellipse class="st0" cx="834.02" cy="541.52" rx="208.98" ry="52.45"/>
+</svg>
