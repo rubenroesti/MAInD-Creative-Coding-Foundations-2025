@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1080 1080">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #a67c52;
+      }
+
+      .st1 {
+        fill: #ff0;
+      }
+    </style>
+  </defs>
+  <path class="st1" d="M1079.16,540C1079.16,314,563.57,14.08,540,.48v-.48s-.14.08-.42.24c-.28-.16-.42-.24-.42-.24v.48C515.59,14.08,0,314,0,540s515.59,525.92,539.16,539.52v.48s.15-.08.42-.24c.28.16.42.24.42.24v-.48c23.57-13.59,539.16-313.51,539.16-539.52Z"/>
+  <ellipse class="st0" cx="270" cy="808.74" rx="264.11" ry="66.29" transform="translate(-492.78 427.8) rotate(-45)"/>
+  <ellipse class="st0" cx="810.16" cy="808.74" rx="66.29" ry="264.11" transform="translate(-334.57 809.74) rotate(-45)"/>
+  <ellipse class="st0" cx="270" cy="297.9" rx="66.29" ry="264.11" transform="translate(-131.57 278.17) rotate(-45)"/>
+  <ellipse class="st0" cx="810.16" cy="297.9" rx="264.11" ry="66.29" transform="translate(26.64 660.12) rotate(-45)"/>
+</svg>

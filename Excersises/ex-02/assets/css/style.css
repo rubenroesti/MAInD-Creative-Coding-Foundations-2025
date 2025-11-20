@@ -5,7 +5,7 @@
     src: url(/assets/fonts/Baikal-Medium.otf);
   }
 
-/* golbal styles */
+/* global */
 
 html {
   background-color: #736357;
@@ -37,8 +37,7 @@ h1 {
 }
 
 main {
-  background-color: red;
-  flex-grow: 1; 
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,7 +76,7 @@ main {
 
 canvas {
   flex-grow: 1; 
-  height: 100%;
+  /* height: 100%; */
   width: auto; 
   aspect-ratio: 1 / 1;
   display: block;
@@ -85,6 +84,88 @@ canvas {
   max-width: 700px; 
 }
 
+
+/* splash*/
+
+#splash-page {
+  position: fixed; 
+  width: 100%;
+  height: 100vh;
+  background-color: #5d514a; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+#splash-page.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#splash-page h2 {
+  font-family: baikal;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+/* characters */
+
+#character-selector {
+  /* background-color: red; */
+  /* width: 60px; */
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.char-option {
+  background: #736357; 
+  border: 3px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.char-option:hover:not(.selected) {
+  border-color: white;
+}
+
+.char-option.selected {
+  border-color: white; 
+}
+
+.char-option img {
+  width: 60px; 
+  height: 60px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.char-option p {
+  font-family: baikal;
+  font-size: 1.1em;
+  color: white;
+}
+
+/* start game */
+
+#start-game-btn {
+  padding: 10px 30px;
+  font-family: baikal;
+  font-size: 1.5em;
+  background-color: #ff7bac;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
 
 /* iPad Pro */
@@ -108,26 +189,11 @@ canvas {
   }
 
 }
-/* iPad Pro */
-@media (max-width: 1024px) {
-  #title-header {
-    padding: 5px 0;
-  }
-  h1 {
-    font-size: 1.3em;
-  }
-
-  #game-info {
-    padding: 0 10px;
-  }
-  #timer-display, #score-display {
-    font-size: 1em;
-  }
-
+/* 540px */
+@media (max-width: 800px) {
   canvas {
     max-width: 540px; 
   }
-
 }
 
 /* iPad */
@@ -172,5 +238,9 @@ canvas {
   canvas {
     max-width: 340px; 
   }
+
+  #character-selector { gap: 15px; }
+  .char-option img { width: 40px; height: 40px; }
+  .char-option p { font-size: 0.9em; }
 
 }

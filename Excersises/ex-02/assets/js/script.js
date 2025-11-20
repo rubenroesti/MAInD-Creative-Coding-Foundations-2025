@@ -4,6 +4,12 @@ const ctx = canvas.getContext('2d');
 const scoreDisplay = document.getElementById('score-display');
 const timerDisplay = document.getElementById('timer-display');
 
+// splashPage
+const splashPage = document.getElementById('splash-page');
+const charOptions = document.querySelectorAll('.char-option');
+const startGameBtn = document.getElementById('start-game-btn');
+// end splashPage
+
 class SnakePart{
   constructor(x, y){
     this.x = x;
@@ -41,13 +47,50 @@ let currentTime = 0;
 let timerInterval;
 
 const headImage = new Image();
-headImage.src = 'assets/images/snakeHead.svg';
-
 const bodyImage = new Image();
-bodyImage.src = 'assets/images/snakeBody.svg';
-
 const appleImage = new Image();
+
+let selectedHeadSrc = 'assets/images/snakeHead.svg';
+let selectedBodySrc = 'assets/images/snakeBody.svg';
+
+headImage.src = selectedHeadSrc;
+bodyImage.src = selectedBodySrc;
 appleImage.src = 'assets/images/apple.svg';
+
+
+charOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        charOptions.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+
+        selectedHeadSrc = option.getAttribute('data-head-src');
+        selectedBodySrc = option.getAttribute('data-body-src');
+    });
+});
+
+startGameBtn.addEventListener('click', () => {
+    if (selectedHeadSrc && selectedBodySrc) {
+
+        headImage.src = selectedHeadSrc;
+        bodyImage.src = selectedBodySrc;
+
+        let imagesLoaded = 0;
+        const totalImages = 2;
+
+        const checkLoadComplete = () => {
+            imagesLoaded++;
+            if (imagesLoaded === totalImages) {
+                splashPage.classList.add('hidden'); 
+                
+                resizeCanvas();
+            }
+        };
+
+        headImage.onload = checkLoadComplete;
+        bodyImage.onload = checkLoadComplete;
+
+    }
+});
 
 function resizeCanvas() {
   const ratio = window.devicePixelRatio || 1; 
@@ -71,7 +114,7 @@ function resizeCanvas() {
 }
 
 window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+// resizeCanvas() is removed from here. It is called by the splash screen start button now.
 
 function updateTimer() {
     if (gameStarted) {
@@ -181,6 +224,7 @@ function resetGame() {
   score = 0;
   speed = 7;
   updateScoreDisplay();
+
   drawGame();
 }
 
@@ -250,6 +294,11 @@ function changeSnakePosition(){
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event){
+
+    if (!splashPage.classList.contains('hidden')) {
+        return;
+    }
+
   //timer
 if (!gameStarted && (event.keyCode >= 37 && event.keyCode <= 40)) {
     gameStarted = true;
