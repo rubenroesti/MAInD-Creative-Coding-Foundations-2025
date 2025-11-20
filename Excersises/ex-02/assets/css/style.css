@@ -5,91 +5,172 @@
     src: url(/assets/fonts/Baikal-Medium.otf);
   }
 
+/* golbal styles */
+
 html {
-    background-color: #736357;
+  background-color: #736357;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; 
-    min-height: 100vh;
-    align-items: center; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  height: 100vh; 
+  overflow: hidden; 
+  align-items: center; 
 }
 
 #title-header {
-    width: 100%; 
-    background-color: #5d514a;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%; 
+  background-color: #5d514a;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    font-size: 1.5em;
-    font-family: baikal;
-    color: white;
-    margin: 0;
-    text-align: center;
+  font-size: 1.5em;
+  font-family: baikal;
+  color: white;
+  margin: 0;
+  text-align: center;
 }
 
 main {
-    flex-grow: 1; 
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 90vw;
-    max-width: 800px;
-    padding-top: 10px;
+  background-color: red;
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  max-width: 700px; 
+  padding-top: 10px;
+  overflow-y: hidden; 
 }
 
 #game-info {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%; 
-    margin-bottom: 5px;
-    padding: 5px 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%; 
+  margin-bottom: 5px;
+  padding: 5px 0;
+
 }
 
 #timer-display {
-    color: white;
-    font-size: 1.2em;
-    font-family: baikal;
-    text-align: left;
-    margin: 0;
+  color: white;
+  font-size: 1.2em;
+  font-family: baikal;
+  text-align: left;
+  margin: 0;
 }
 
 #score-display {
-    color: white;
-    font-family: baikal;
-    font-size: 1.2em;
-    text-align: right;
-    margin: 0;
+  color: white;
+  font-family: baikal;
+  font-size: 1.2em;
+  text-align: right;
+  margin: 0;
 }
 
 canvas {
-    flex-grow: 1; 
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    display: block;
-    margin: 0;
-    max-width: 800px; 
+  flex-grow: 1; 
+  height: 100%;
+  width: auto; 
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin: 0;
+  max-width: 700px; 
 }
 
-@media (max-width: 800px) {
-    #title-header {
-        padding: 5px 0;
-    }
-    h1 {
-        font-size: 1.3em;
-    }
-    #game-stats {
-        padding: 0 10px;
-    }
-    #timer-display, #score-display {
-        font-size: 1em;
-    }
+
+
+/* iPad Pro */
+@media (max-width: 1024px) {
+  #title-header {
+    padding: 5px 0;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+
+  #game-info {
+    padding: 0 10px;
+  }
+  #timer-display, #score-display {
+    font-size: 1em;
+  }
+
+  canvas {
+    max-width: 640px; 
+  }
+
+}
+/* iPad Pro */
+@media (max-width: 1024px) {
+  #title-header {
+    padding: 5px 0;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+
+  #game-info {
+    padding: 0 10px;
+  }
+  #timer-display, #score-display {
+    font-size: 1em;
+  }
+
+  canvas {
+    max-width: 540px; 
+  }
+
+}
+
+/* iPad */
+@media (max-width: 769px) {
+  #title-header {
+    padding: 5px 0;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+
+  #game-info {
+    padding: 0 10px;
+  }
+  #timer-display, #score-display {
+    font-size: 1em;
+  }
+
+  canvas {
+    max-width: 440px; 
+  }
+
+}
+
+
+/* Phone*/
+@media (max-width: 480px) {
+  #title-header {
+    padding: 5px 0;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+
+  #game-info {
+    padding: 0 10px;
+  }
+  #timer-display, #score-display {
+    font-size: 1em;
+  }
+
+  canvas {
+    max-width: 340px; 
+  }
+
 }
