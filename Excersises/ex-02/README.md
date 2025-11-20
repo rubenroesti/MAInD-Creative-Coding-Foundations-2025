@@ -13,9 +13,9 @@ Choose a “mini-game” to rebuild with HTML, CSS and JavaScript. The requireme
 
 ## Screenshots
 
-![Screenshot](/assets/images/Screenshot%202025-11-21%20at%2000.24.37%20(2).png)
-![Screenshot](/assets/images/Screenshot%202025-11-21%20at%2000.24.37.png)
-![Screenshot](/assets/images/Screenshot%202025-11-21%20at%2000.24.21.png)
+![Screenshot](./assets/images/Screenshot%202025-11-21%20at%2000.24.37%20(2).png)
+![Screenshot](./assets/images/Screenshot%202025-11-21%20at%2000.24.37.png)
+![Screenshot](./assets/images/Screenshot%202025-11-21%20at%2000.24.21.png)
 
 ## Project description
 
@@ -27,7 +27,7 @@ The graphics are custom svg's using a more modern aesthetic compared to the orig
 
 ## Flowchart
 
-![Flow chart](/assets/images/flowchart.svg)
+![Flow chart](./assets/images/flowchart.svg)
 
 ## Function list
 
