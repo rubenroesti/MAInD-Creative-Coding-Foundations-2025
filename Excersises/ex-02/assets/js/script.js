@@ -50,8 +50,8 @@ const headImage = new Image();
 const bodyImage = new Image();
 const appleImage = new Image();
 
-let selectedHeadSrc = 'assets/images/snakeHead.svg';
-let selectedBodySrc = 'assets/images/snakeBody.svg';
+let selectedHeadSrc = 'assets/images/head1.svg';
+let selectedBodySrc = 'assets/images/body3.svg';
 
 headImage.src = selectedHeadSrc;
 bodyImage.src = selectedBodySrc;
@@ -234,7 +234,7 @@ function updateScoreDisplay(){
 
 function clearScreen(){
   
-ctx.fillStyle = '#736357';
+ctx.fillStyle = '#a67c52';
 ctx.fillRect(0,0,canvas.clientWidth, canvas.clientHeight);
 
 } 

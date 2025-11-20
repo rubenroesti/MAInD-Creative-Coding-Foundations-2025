@@ -4,20 +4,9 @@
   <defs>
     <style>
       .st0 {
-        fill: #a67c52;
-      }
-
-      .st1 {
-        fill: #00ffac;
+        fill: lime;
       }
     </style>
   </defs>
-  <g>
-    <path class="st1" d="M540.16,0v1080s540-308.71,540-540S540.16,0,540.16,0Z"/>
-    <path class="st1" d="M0,540c0,231.29,540,540,540,540V0S0,308.71,0,540Z"/>
-  </g>
-  <ellipse class="st0" cx="270" cy="808.74" rx="264.11" ry="66.29" transform="translate(-492.78 427.8) rotate(-45)"/>
-  <ellipse class="st0" cx="810.16" cy="808.74" rx="66.29" ry="264.11" transform="translate(-334.57 809.74) rotate(-45)"/>
-  <ellipse class="st0" cx="270" cy="297.9" rx="66.29" ry="264.11" transform="translate(-131.57 278.17) rotate(-45)"/>
-  <ellipse class="st0" cx="810.16" cy="297.9" rx="264.11" ry="66.29" transform="translate(26.64 660.12) rotate(-45)"/>
+  <polygon class="st0" points="892.78 553.04 1080.23 365.59 723.03 8.38 535.58 195.83 356.97 17.23 -.23 374.43 178.37 553.04 8.61 722.79 365.82 1080 535.58 910.24 704.79 1079.46 1062 722.26 892.78 553.04"/>
 </svg>
